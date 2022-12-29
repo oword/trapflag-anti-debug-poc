@@ -6,7 +6,7 @@ void force_exception()
     __try
     {
         __asm {
-        pushfd ; push ZFLAG
+        pushfd ; push EFLAG
         or word ptr[esp], 0x100 ; setting trapflag
         popfd ; popping ZFLAG back into register
         nop ; trapflag is triggered on this instruction
